@@ -10,7 +10,7 @@ public:
 	void AdjustUp(size_t child)
 	{
 		size_t parent = (child - 1) >> 1;
-		while (parent > 0)
+		while (child > 0)
 		{
 			if (_con[child] > _con[parent])
 			{
@@ -45,7 +45,8 @@ public:
 	void Pop()
 	{
 		swap(_con[0], _con[_con.size() - 1]);
-		AdjustDown(_con[0]);
+		_con.pop_back();
+		AdjustDown(0);
 	}
 	bool Empty()
 	{
@@ -53,7 +54,7 @@ public:
 	}
 	size_t Top()
 	{
-
+		return _con[0];
 	}
 private:
 	Container _con;
