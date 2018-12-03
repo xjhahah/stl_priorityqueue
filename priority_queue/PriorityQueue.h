@@ -18,6 +18,10 @@ public:
 				child = parent;
 				parent = (child - 1) >> 1;
 			}
+			else
+			{
+				break;
+			}
 		}
 	}
 	void AdjustDown(size_t parent)
@@ -34,6 +38,10 @@ public:
 				swap(_con[child], _con[parent]);
 				parent = child;
 				child = (parent << 1) + 1;
+			}
+			else
+			{
+				break;
 			}
 		}
 	}
